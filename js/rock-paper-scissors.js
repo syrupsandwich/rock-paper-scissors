@@ -17,38 +17,33 @@ function getRandomInt(max) {
 
 // compare choices
 function playRound(playerSelection, computerSelection) {
+  console.log(`user: ${playerSelection}`);
+  console.log(`computer: ${computerSelection}`);
   if (playerSelection == 'rock' & computerSelection == 'paper') {
-    console.log('user: rock')
-    console.log('computer: paper')
     return ('You LOOOSE! Paper beats rock.');
   } else if (playerSelection == 'paper' & computerSelection == 'rock') {
-    console.log('user: paper')
-    console.log('computer: rock')
     return ('You win this round. >:(');
   } else if (playerSelection == 'rock' & computerSelection == 'scissors') {
-    console.log('user: rock')
-    console.log('computer: scissors')
     return ('You broke my scissors. :(');
   } else if (playerSelection == 'scissors' & computerSelection == 'rock') {
-    console.log('user: scissors')
-    console.log('computer: rock')
     return ('You loose! I hope those scissors arn\'t borrowed.');
   } else if (playerSelection == 'scissors' & computerSelection == 'paper') {
-    console.log('user: scissors')
-    console.log('computer: paper')
     return ('You cut my paper! How could you! >:I');
   } else if (playerSelection == 'paper' & computerSelection == 'scisors') {
-    console.log('user: paper')
-    console.log('computer: scissors')
     return ('Snip snip. You loose!');
   } else {
     return (`Computer chose ${playerSelection}. Its a tie...`);
   }
 }
 
+let playerScore = 0;
+let computerScore = 0;
+let score = (`${playerScore}:${computerScore}`)
 const playerSelection = ('rock');
 const computerSelection = computerPlay();
 console.log(playRound(playerSelection, computerSelection));
+
+console.log(score);
 
 // function game() {
 //   for (let i = 0; i < 5; i++) {
