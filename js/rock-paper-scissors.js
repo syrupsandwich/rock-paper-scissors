@@ -20,7 +20,6 @@ let computerScore = 0;
 let round = 0;
 // compare choices
 function playRound(playerSelection, computerSelection) {
-  let attack = computerSelection;
   console.log(`Round ${++round}: user played ${playerSelection} against ${attack}.`);
   
   if (playerSelection == 'rock' & computerSelection == 'paper') {
