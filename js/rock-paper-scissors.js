@@ -17,9 +17,9 @@ function getRandomInt(max) {
 
 let playerScore = 0;
 let computerScore = 0;
-let round = 0;
 // compare choices
 function playRound(playerSelection, computerSelection) {
+  let round = 0;
   console.log(`Round ${++round}: user played ${playerSelection} against ${computerSelection}.`);
   
   if (playerSelection == 'rock' & computerSelection == 'paper') {
@@ -36,17 +36,15 @@ function playRound(playerSelection, computerSelection) {
     ++computerScore;
   } else if (playerSelection == (null || ' ')) {
     console.log(`Try again.`);
-    return round--;
   } else {
     console.log(`...Its a tie...`);
-    return round--;
   }
 }
 
 
 // const playerSelection = (prompt('Rock Paper Scissors!'));
 
-const computerSelection = computerPlay();
+// const computerSelection = computerPlay();
 // console.log(`user: ${playerScore}, computer: ${computerScore}`);
 
 // does not update score
@@ -59,7 +57,7 @@ console.log(game());
 function game() {
   for (let round = 0; round < 5; round++) {
     console.log(`...computer may choose ${computerPlay()}.`);
-    playRound(prompt('Rock Paper Scissors!'.toLowerCase()), computerSelection);
+    playRound(prompt('Rock Paper Scissors!'.toLowerCase()), computerPlay());
     console.log(`user: ${playerScore}, computer: ${computerScore}`);
   }
   if (playerScore > computerScore) {
