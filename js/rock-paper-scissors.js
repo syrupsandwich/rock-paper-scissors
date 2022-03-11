@@ -9,7 +9,7 @@ function computerPlay() {
   }
 }
 // test computerPlay output is random
-console.log(`Computer may choose ${computerPlay()}.`)
+// console.log(`Computer may choose ${computerPlay()}.`)
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -17,44 +17,57 @@ function getRandomInt(max) {
 
 let playerScore = 0;
 let computerScore = 0;
-
+let round = 0;
 // compare choices
 function playRound(playerSelection, computerSelection) {
-  console.log(`user: ${playerSelection}`);
-  console.log(`computer: ${computerSelection}`);
+  let attack = computerSelection;
+  console.log(`Round ${++round}: user played ${playerSelection} against ${attack}.`);
+  
   if (playerSelection == 'rock' & computerSelection == 'paper') {
     ++computerScore;
-    return ('You LOOOSE! Paper beats rock.');
   } else if (playerSelection == 'paper' & computerSelection == 'rock') {
     ++playerScore;
-    return ('You win this round. >:(');
   } else if (playerSelection == 'rock' & computerSelection == 'scissors') {
     ++playerScore;
-    return ('You broke my scissors. :(');
   } else if (playerSelection == 'scissors' & computerSelection == 'rock') {
     ++computerScore;
-    return ('You loose! I hope those scissors arn\'t borrowed.');
   } else if (playerSelection == 'scissors' & computerSelection == 'paper') {
     ++playerScore;
-    return ('You cut my paper! How could you! >:I');
   } else if (playerSelection == 'paper' & computerSelection == 'scisors') {
     ++computerScore;
-    return ('Snip snip. You loose!');
+  } else if (playerSelection == (null || ' ')) {
+    console.log(`Try again.`);
+    return round--;
   } else {
-    return (`Computer chose ${playerSelection}. Its a tie...`);
+    console.log(`...Its a tie...`);
+    return round--;
   }
 }
 
 
-// let score = (`${playerScore}:${computerScore}`);
-const playerSelection = ('rock');
+// const playerSelection = (prompt('Rock Paper Scissors!'));
+
 const computerSelection = computerPlay();
-console.log(playRound(playerSelection, computerSelection));
+// console.log(`user: ${playerScore}, computer: ${computerScore}`);
 
-console.log(`you: ${playerScore}, computer: ${computerScore}`);
-
-// function game() {
-//   for (let i = 0; i < 5; i++) {
-//   }
+// does not update score
+// function getScore() {
+//   return `${playerScore}:${computerScore}`;
 // }
 
+console.log(game());
+
+function game() {
+  for (let round = 0; round < 5; round++) {
+    console.log(`...computer may choose ${computerPlay()}.`);
+    playRound(prompt('Rock Paper Scissors!'.toLowerCase()), computerSelection);
+    console.log(`user: ${playerScore}, computer: ${computerScore}`);
+  }
+  if (playerScore > computerScore) {
+    console.log(`***User is the winner!***`);
+  } else if (computerScore > playerScore) {
+    console.log(`***Computer is the winner!***`);
+  } else {
+    console.log(`Its a draw...`);
+  }
+}
