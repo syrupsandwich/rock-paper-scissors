@@ -17,47 +17,41 @@ function getRandomInt(max) {
 
 let playerScore = 0;
 let computerScore = 0;
+let currentGameRound = 0;
+
 // compare choices
 function playRound(playerSelection, computerSelection) {
-  let round = 0;
-  console.log(`Round ${++round}: user played ${playerSelection} against ${computerSelection}.`);
+  console.log(`Round ${++currentGameRound}:\
+ user played ${playerSelection}\
+ against ${computerSelection}.`);
   
   if (playerSelection == 'rock' & computerSelection == 'paper') {
     ++computerScore;
-  } else if (playerSelection == 'paper' & computerSelection == 'rock') {
-    ++playerScore;
   } else if (playerSelection == 'rock' & computerSelection == 'scissors') {
     ++playerScore;
+  } else if (playerSelection == 'paper' & computerSelection == 'rock') {
+    ++playerScore;
+  } else if (playerSelection == 'paper' & computerSelection == 'scissors') {
+    ++computerScore;
   } else if (playerSelection == 'scissors' & computerSelection == 'rock') {
     ++computerScore;
   } else if (playerSelection == 'scissors' & computerSelection == 'paper') {
     ++playerScore;
-  } else if (playerSelection == 'paper' & computerSelection == 'scisors') {
-    ++computerScore;
-  } else if (playerSelection == (null || ' ')) {
-    console.log(`Try again.`);
+  } else if (playerSelection == computerSelection) {
+    console.log(`...`)
+  } else if(playerSelection == (null || ' ')) {
+    playerSelection = 'nothing';
+    console.log(`game was quit.`);
   } else {
-    console.log(`...Its a tie...`);
+    console.log(`Error.`);
   }
 }
-
-
-// const playerSelection = (prompt('Rock Paper Scissors!'));
-
-// const computerSelection = computerPlay();
-// console.log(`user: ${playerScore}, computer: ${computerScore}`);
-
-// does not update score
-// function getScore() {
-//   return `${playerScore}:${computerScore}`;
-// }
 
 console.log(game());
 
 function game() {
   for (let round = 0; round < 5; round++) {
-    console.log(`...computer may choose ${computerPlay()}.`);
-    playRound(prompt('Rock Paper Scissors!'.toLowerCase()), computerPlay());
+    playRound(prompt(`...computer may choose ${computerPlay()}.`.toLowerCase()), computerPlay());
     console.log(`user: ${playerScore}, computer: ${computerScore}`);
   }
   if (playerScore > computerScore) {
@@ -65,6 +59,11 @@ function game() {
   } else if (computerScore > playerScore) {
     console.log(`***Computer is the winner!***`);
   } else {
-    console.log(`Its a draw...`);
+    console.log(`there is no winner.`);
   }
 }
+
+// does not update score
+// function getScore() {
+//   return `${playerScore}:${computerScore}`;
+// }
