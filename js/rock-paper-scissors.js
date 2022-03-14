@@ -8,8 +8,6 @@ function computerPlay() {
     return ('scissors');
   }
 }
-// test computerPlay output is random
-// console.log(`Computer may choose ${computerPlay()}.`)
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
@@ -21,9 +19,9 @@ let currentGameRound = 0;
 
 // compare choices
 function playRound(playerSelection, computerSelection) {
-  console.log(`Round ${++currentGameRound}:\
- user played ${playerSelection}\
- against ${computerSelection}.`);
+  console.log(`Round ${++currentGameRound}:`
+  + ` user played ${playerSelection}`
+  + ` against ${computerSelection}.`);
   
   if (playerSelection == 'rock' & computerSelection == 'paper') {
     ++computerScore;
@@ -47,7 +45,7 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-console.log(game());
+// console.log(game());
 
 function game() {
   for (let round = 0; round < 5; round++) {
@@ -62,8 +60,3 @@ function game() {
     console.log(`there is no winner.`);
   }
 }
-
-// does not update score
-// function getScore() {
-//   return `${playerScore}:${computerScore}`;
-// }
