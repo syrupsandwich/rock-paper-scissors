@@ -1,4 +1,4 @@
-// return either rock, paper, or scissors
+// return a random selection of rock, paper, or scissors
 function computerPlay() {
   if (getRandomInt(3) == 0) {
     return ('rock');
@@ -17,12 +17,24 @@ let playerScore = 0;
 let computerScore = 0;
 let currentGameRound = 0;
 
-// compare choices
+let score = document.querySelector('#score');
+let title = document.querySelector('#title');
+let results = document.querySelector('#results');
+
+// compare the player's selection against a random selection
 function playRound(playerSelection, computerSelection) {
-  console.log(`Round ${++currentGameRound}:`
+
+  //stop the round if player selections are the same
+  if (playerSelection == computerSelection) {
+    results.textContent = (`Error: same selection by chance`)
+    return;
+  }
+
+  results.textContent = (`Round ${++currentGameRound}:`
   + ` user played ${playerSelection}`
   + ` against ${computerSelection}.`);
-  
+
+  //update: replace console.log with results.textContent
   if (playerSelection == 'rock' & computerSelection == 'paper') {
     ++computerScore;
   } else if (playerSelection == 'rock' & computerSelection == 'scissors') {
@@ -35,28 +47,17 @@ function playRound(playerSelection, computerSelection) {
     ++computerScore;
   } else if (playerSelection == 'scissors' & computerSelection == 'paper') {
     ++playerScore;
-  } else if (playerSelection == computerSelection) {
-    console.log(`...`)
-  } else if(playerSelection == (null || ' ')) {
-    playerSelection = 'nothing';
-    console.log(`game was quit.`);
   } else {
-    console.log(`Error.`);
+    results.textContent = (`Error.`);
   }
 }
 
-// console.log(game());
+//remove function game()
 
-function game() {
-  for (let round = 0; round < 5; round++) {
-    playRound(prompt(`...computer may choose ${computerPlay()}.`.toLowerCase()), computerPlay());
-    console.log(`user: ${playerScore}, computer: ${computerScore}`);
-  }
-  if (playerScore > computerScore) {
-    console.log(`***User is the winner!***`);
-  } else if (computerScore > playerScore) {
-    console.log(`***Computer is the winner!***`);
-  } else {
-    console.log(`there is no winner.`);
-  }
-}
+let selection = document.querySelector('#selection');
+selection.addEventListener('click', (event) => {
+  if (event.target.nodeName == 'DIV') return;
+  playRound(event.target.textContent, computerPlay());
+  score.textContent = `The score is ${playerScore} to ${computerScore}.`;
+});
+
