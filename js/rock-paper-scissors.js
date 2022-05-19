@@ -56,7 +56,7 @@ function playRound(playerSelection, computerSelection) {
 let selection = document.querySelector('#selection');
 selection.addEventListener('click', (event) => {
   if (event.target.nodeName == 'DIV') return;
-  playRound(event.target.textContent, computerPlay());
+  playRound(event.target.textContent.toLowerCase(), computerPlay());
   score.textContent = `The score is ${playerScore} to ${computerScore}.`;
 });
 
