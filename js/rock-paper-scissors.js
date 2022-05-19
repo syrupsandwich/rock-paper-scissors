@@ -26,15 +26,14 @@ function playRound(playerSelection, computerSelection) {
 
   //stop the round if player selections are the same
   if (playerSelection == computerSelection) {
-    results.textContent = (`Error: same selection by chance`)
+    results.textContent = (`Round ${currentGameRound}: same selection by chance`)
     return;
-  }
+  } 
 
   results.textContent = (`Round ${++currentGameRound}:`
   + ` user played ${playerSelection}`
   + ` against ${computerSelection}.`);
 
-  //update: replace console.log with results.textContent
   if (playerSelection == 'rock' & computerSelection == 'paper') {
     ++computerScore;
   } else if (playerSelection == 'rock' & computerSelection == 'scissors') {
@@ -49,10 +48,10 @@ function playRound(playerSelection, computerSelection) {
     ++playerScore;
   } else {
     results.textContent = (`Error.`);
-  }
+  } 
+  
+  checkScore();
 }
-
-//remove function game()
 
 let selection = document.querySelector('#selection');
 selection.addEventListener('click', (event) => {
@@ -61,3 +60,14 @@ selection.addEventListener('click', (event) => {
   score.textContent = `The score is ${playerScore} to ${computerScore}.`;
 });
 
+function announceWinner(){
+  if (playerScore > computerScore) {
+    results.textContent = `Round ${currentGameRound}: ***PLAYER WINS***`;
+  } else {
+    results.textContent = `Round ${currentGameRound}: ***COMPUTER WINS***`;
+  }
+}
+
+function checkScore() {
+  if (currentGameRound % 5 == 0 && currentGameRound > 0) announceWinner();
+}
