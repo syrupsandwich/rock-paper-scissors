@@ -3,16 +3,25 @@
   flex-direction: column;
   align-items: center;
   
-  }
+}
   
-  .btn {
-    /* height: 30px; */
-    padding: 10px 20px;
-    font-size: large;
-  }
+.btn {
+  padding: 10px 20px;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 6px;
+}
 
-  div {
-    font-size: 30px;
-    margin: 4px;
-    font-family: 'Times New Roman', Times, serif;
-  }
+div {
+  font-size: 30px;
+  margin: 4px;
+  font-family: 'Times New Roman', Times, serif;
+}
+  
+#selection {
+  margin-top: 8px;
+}
+  
+body {
+  background-color: #f1f1f1;
+}
