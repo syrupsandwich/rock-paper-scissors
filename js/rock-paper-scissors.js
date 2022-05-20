@@ -62,9 +62,9 @@ selection.addEventListener('click', (event) => {
 
 function announceWinner(){
   if (playerScore > computerScore) {
-    results.textContent = `Round ${currentGameRound}: ***PLAYER WINS***`;
+    results.textContent += ' ***PLAYER WINS***';
   } else {
-    results.textContent = `Round ${currentGameRound}: ***COMPUTER WINS***`;
+    results.textContent += ' ***COMPUTER WINS***';
   }
 }
 
