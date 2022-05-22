@@ -17,7 +17,7 @@ let playerScore = 0;
 let computerScore = 0;
 let currentGameRound = 0;
 
-let score = document.querySelector('#score');
+let scoreBoard = document.querySelector('#score');
 let title = document.querySelector('#title');
 let results = document.querySelector('#results');
 
@@ -50,25 +50,24 @@ function playRound(playerSelection, computerSelection) {
     results.textContent = (`Error.`);
   } 
   
-  // checkScore();
 }
 
 let selection = document.querySelector('#selection');
 selection.addEventListener('click', (event) => {
   if (event.target.nodeName == 'DIV') return;
   playRound(event.target.textContent.toLowerCase(), computerPlay());
-  score.textContent = `The score is ${playerScore} to ${computerScore}.`;
+  scoreBoard.textContent = `The score is ${playerScore} to ${computerScore}.`;
   checkScore();
 });
 
-function announceWinner(){
-  if (playerScore > computerScore) {
-    score.textContent += ' ***PLAYER WINS***';
-  } else {
-    score.textContent += ' ***COMPUTER WINS***';
-  }
-}
-
 function checkScore() {
   if (currentGameRound % 5 == 0 && currentGameRound > 0) announceWinner();
+}
+
+function announceWinner(){
+  if (playerScore > computerScore) {
+    scoreBoard.textContent += ' ***PLAYER WINS***';
+  } else {
+    scoreBoard.textContent += ' ***COMPUTER WINS***';
+  }
 }
