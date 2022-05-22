@@ -37,3 +37,7 @@ body {
   text-align: center;
 }
 
+#hands {
+  display: flex;
+  justify-content: space-between;
+}
