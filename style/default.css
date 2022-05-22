@@ -25,3 +25,17 @@ div {
 body {
   background-color: #f1f1f1;
 }
+
+#ring {
+  min-width: 700px;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 6px;
+  padding: 6px;
+  border: 1px solid rgb(179, 179, 179);
+  box-shadow: inset 2px 2px darkslategrey;
+  text-align: center;
+}
+
