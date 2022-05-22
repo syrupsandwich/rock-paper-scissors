@@ -50,7 +50,7 @@ function playRound(playerSelection, computerSelection) {
     results.textContent = (`Error.`);
   } 
   
-  checkScore();
+  // checkScore();
 }
 
 let selection = document.querySelector('#selection');
@@ -58,13 +58,14 @@ selection.addEventListener('click', (event) => {
   if (event.target.nodeName == 'DIV') return;
   playRound(event.target.textContent.toLowerCase(), computerPlay());
   score.textContent = `The score is ${playerScore} to ${computerScore}.`;
+  checkScore();
 });
 
 function announceWinner(){
   if (playerScore > computerScore) {
-    results.textContent += ' ***PLAYER WINS***';
+    score.textContent += ' ***PLAYER WINS***';
   } else {
-    results.textContent += ' ***COMPUTER WINS***';
+    score.textContent += ' ***COMPUTER WINS***';
   }
 }
 
