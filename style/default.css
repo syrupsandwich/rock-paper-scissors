@@ -28,7 +28,7 @@ body {
 
 #ring {
   min-width: 700px;
-  min-height: 600px;
+  /* min-height: 600px; */
   background-color: white;
   border-radius: 6px;
   padding: 6px;
@@ -40,4 +40,13 @@ body {
 #hands {
   display: flex;
   justify-content: space-between;
+}
+
+#shoot {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+#spacer {
+  height: 300px;
 }
