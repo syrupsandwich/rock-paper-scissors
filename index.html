@@ -9,22 +9,34 @@
     <h2 id="title">Play 5 Rounds of Rock Paper Scissors.</h2>
     <div id="ring">
       
-      <div id="spacer">
+      <div class="side-container">
         <div id="hands">
           <img class="hand" id="left" src="./image/rps-rock.svg" alt="player hand sign">
-          <img class="hand" id="right" src="./image/rps-robot-rock.svg" alt="computer hand sign">
         </div>
       </div>
       
-    <div id="results">Best of 5 rounds against a computer.</div>
-    <div id="score">Make a selection to begin.</div>
-    
-    <div id="selection">
-      <button class="btn" id="rock">ROCK</button>
-      <button class="btn" id="paper">PAPER</button>
-      <button class="btn" id="scissors">SCISSORS</button>
-    </div>
-    <button class="btn"id="shoot">SHOOT</button>
+      <div id="middle-container">
+        <p id="results">Best of 5 rounds against a computer.</p>
+        <p id="score">Make a selection to begin.</p>
+      
+
+        <div id="selection">
+        <button class="btn" id="rock">ROCK</button>
+        <button class="btn" id="paper">PAPER</button>
+        <button class="btn" id="scissors">SCISSORS</button>
+        </div>
+
+        <div>
+        <button class="btn"id="shoot">SHOOT</button>
+        </div>
+      </div>
+      
+      <div class="side-container">
+        <div id="hands">
+          <img class="hand" id="right" src="./image/rps-robot-rock.svg" alt="computer hand sign">
+        </div>
+      </div>
+
     </div>
   </div>
   <script src="./js/rock-paper-scissors.js" defer></script>

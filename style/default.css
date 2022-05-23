@@ -14,7 +14,7 @@
 
 div {
   font-size: 30px;
-  margin: 4px;
+  /* margin: 4px; */
   font-family: 'Times New Roman', Times, serif;
 }
   
@@ -24,23 +24,22 @@ div {
   
 body {
   background-color: #f1f1f1;
+  text-align: center;
 }
 
 #ring {
-  min-width: 700px;
-  /* min-height: 600px; */
   background-color: white;
   border-radius: 6px;
   padding: 6px;
   border: 1px solid rgb(179, 179, 179);
   box-shadow: inset 2px 2px darkslategrey;
-  text-align: center;
+  display: flex;
+  min-width: 900px;
+  justify-content: space-between;
 }
 
-#hands {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
+#middle-container {
+  min-width: 360px;
 }
 
 #left {
@@ -54,13 +53,12 @@ body {
 }
 
 #shoot {
-  width: 300px;
+  width: 200px;
   margin-top: 200px;
   margin-bottom: 200px;
 }
 
-#spacer {
-  height: 500px;
-  position: absolute;
-  width: 700px;
+.side-container {
+  /* position: relative; */
+  max-width: 150px;
 }
