@@ -20,6 +20,7 @@ div {
   
 #selection {
   margin-top: 8px;
+  /* margin-bottom: 140px; */
 }
   
 body {
@@ -34,31 +35,45 @@ body {
   border: 1px solid rgb(179, 179, 179);
   box-shadow: inset 2px 2px darkslategrey;
   display: flex;
-  min-width: 900px;
+  /* min-width: 900px; */
   justify-content: space-between;
 }
 
 #middle-container {
   min-width: 360px;
+  align-items: center;
+  padding-top: 10px;
 }
 
 #left {
-  max-width: 35%;
+  max-width: 10%;
+  height: auto;
+  /* position: relative; */
+
+}
+
+.hand {
+  max-width: 200%;
   height: auto;
 }
 
 #right {
-  max-width:35%;
+  max-width: 180%;
   height: auto;
+  /* position: relative; */
 }
 
-#shoot {
-  width: 200px;
-  margin-top: 200px;
-  margin-bottom: 200px;
-}
+.shoot {
+  padding-bottom: 200px;
+  text-align: center;
+  border: 1px dashed black;
 
+}
 .side-container {
   /* position: relative; */
   max-width: 150px;
+}
+
+.winner {
+  position: relative;
 }

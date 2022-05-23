@@ -23,7 +23,8 @@ let results = document.querySelector('#results');
 
 // compare the player's selection against a random selection
 function playRound(playerSelection, computerSelection) {
-
+  gameEnd.style.color = 'white';
+  gameEnd.textContent = '.';
   //stop the round if player selections are the same
   if (playerSelection == computerSelection) {
     results.textContent = (`Round ${currentGameRound}: same selection by chance`)
@@ -52,36 +53,47 @@ function playRound(playerSelection, computerSelection) {
   
 }
 
-let selection = document.querySelector('#selection');
-selection.addEventListener('click', (event) => {
+let selection = 'rock';
+
+let buttons = document.querySelector('#buttons');
+buttons.addEventListener('click', (event) => {
   if (event.target.nodeName == 'DIV') return;
-  playRound(event.target.textContent.toLowerCase(), computerPlay());
+  selection = event.target.textContent.toLowerCase();
+  console.log(selection)
+});
+
+let throwDown = document.querySelector('.shoot');
+throwDown.addEventListener('mouseover', function(){
+  playRound(selection, computerPlay());
   scoreBoard.textContent = `The score is ${playerScore} to ${computerScore}.`;
   checkScore();
+  
 });
 
 function checkScore() {
   if (currentGameRound % 5 == 0 && currentGameRound > 0) announceWinner();
 }
 
+let gameEnd = document.querySelector('.winner');
+
 function announceWinner(){
   if (playerScore > computerScore) {
-    scoreBoard.textContent += ' ***PLAYER WINS***';
+    gameEnd.textContent = ' ***PLAYER WINS***';
+    gameEnd.style.color = 'black';
   } else {
-    scoreBoard.textContent += ' ***COMPUTER WINS***';
+    gameEnd.textContent = ' ***COMPUTER WINS***';
+    gameEnd.style.color = 'black';
   }
 }
 
-let mouseTrackingSpace = document.querySelector('#spacer');
-let hands = document.querySelector('#hands');
-let leftHand = document.querySelector('#left'); 
+let mouseTrackingSpace = document.querySelector('#ring');
+let hand = document.querySelector('.hand');
+let leftHand = document.querySelector('#   left'); 
 let rightHand = document.querySelector('#right'); 
 
-console.log(hands.style.top);
-
 mouseTrackingSpace.addEventListener('mousemove', function (e){
-  hands.style.top = e.clientY + - mouseTrackingSpace.getBoundingClientRect().top + 'px';
-  leftHand.style.transform = `rotate(${(e.clientY - 400 ) *.2}deg)`;
+  hand.style.top = e.clientY - mouseTrackingSpace.getBoundingClientRect().top + 'px';
+  leftHand.style.transform = `rotate(${(e.clientY - 100 ) *.2}deg)`;
   rightHand.style.transform = `rotate(${(e.clientY - 400 ) * -.2}deg)`;
 });
 
