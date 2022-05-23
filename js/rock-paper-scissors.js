@@ -71,3 +71,11 @@ function announceWinner(){
     scoreBoard.textContent += ' ***COMPUTER WINS***';
   }
 }
+
+let mouseTrackingSpace = document.querySelector('#spacer');
+let hands = document.querySelector('#hands');
+
+mouseTrackingSpace.addEventListener('mousemove', function (e){
+  hands.style.top = e.clientY + - mouseTrackingSpace.getBoundingClientRect().top + 'px';
+});
+
