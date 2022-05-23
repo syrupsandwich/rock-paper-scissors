@@ -74,8 +74,16 @@ function announceWinner(){
 
 let mouseTrackingSpace = document.querySelector('#spacer');
 let hands = document.querySelector('#hands');
+let leftHand = document.querySelector('#left'); 
+let rightHand = document.querySelector('#right'); 
+
+console.log(hands.style.top);
 
 mouseTrackingSpace.addEventListener('mousemove', function (e){
   hands.style.top = e.clientY + - mouseTrackingSpace.getBoundingClientRect().top + 'px';
+  leftHand.style.transform = `rotate(${(e.clientY - 400 ) *.2}deg)`;
+  rightHand.style.transform = `rotate(${(e.clientY - 400 ) * -.2}deg)`;
 });
+
+
 

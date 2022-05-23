@@ -40,13 +40,27 @@ body {
 #hands {
   display: flex;
   justify-content: space-between;
+  position: relative;
+}
+
+#left {
+  max-width: 35%;
+  height: auto;
+}
+
+#right {
+  max-width:35%;
+  height: auto;
 }
 
 #shoot {
   width: 300px;
-  margin-bottom: 10px;
+  margin-top: 200px;
+  margin-bottom: 200px;
 }
 
 #spacer {
-  height: 300px;
+  height: 500px;
+  position: absolute;
+  width: 700px;
 }
