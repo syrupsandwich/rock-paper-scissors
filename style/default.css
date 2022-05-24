@@ -7,20 +7,18 @@
   
 .btn {
   padding: 10px 20px;
-  font-size: large;
+  font-size: med;
   font-weight: bold;
   border-radius: 6px;
 }
 
 div {
-  font-size: 30px;
-  /* margin: 4px; */
+  font-size: 24px;
   font-family: 'Times New Roman', Times, serif;
 }
   
 #selection {
   margin-top: 8px;
-  /* margin-bottom: 140px; */
 }
   
 body {
@@ -34,46 +32,20 @@ body {
   padding: 6px;
   border: 1px solid rgb(179, 179, 179);
   box-shadow: inset 2px 2px darkslategrey;
-  display: flex;
-  /* min-width: 900px; */
-  justify-content: space-between;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  width: 460px;
 }
 
 #middle-container {
   min-width: 360px;
   align-items: center;
   padding-top: 10px;
-}
-
-#left {
-  max-width: 10%;
-  height: auto;
-  /* position: relative; */
-
-}
-
-.hand {
-  max-width: 200%;
-  height: auto;
-}
-
-#right {
-  max-width: 180%;
-  height: auto;
-  /* position: relative; */
+  /* margin: 0 100px; */
 }
 
 .shoot {
   padding-bottom: 200px;
   text-align: center;
-  border: 1px dashed black;
-
-}
-.side-container {
-  /* position: relative; */
-  max-width: 150px;
-}
-
-.winner {
-  position: relative;
+  border: 1px dashed grey;
 }

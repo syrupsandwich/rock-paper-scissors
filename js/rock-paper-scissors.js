@@ -65,7 +65,7 @@ buttons.addEventListener('click', (event) => {
 let throwDown = document.querySelector('.shoot');
 throwDown.addEventListener('mouseover', function(){
   playRound(selection, computerPlay());
-  scoreBoard.textContent = `The score is ${playerScore} to ${computerScore}.`;
+  scoreBoard.textContent = `${playerScore} : ${computerScore}`;
   checkScore();
   
 });
@@ -86,16 +86,16 @@ function announceWinner(){
   }
 }
 
-let mouseTrackingSpace = document.querySelector('#ring');
-let hand = document.querySelector('.hand');
-let leftHand = document.querySelector('#   left'); 
-let rightHand = document.querySelector('#right'); 
+// let mouseTrackingSpace = document.querySelector('#ring');
+// let hand = document.querySelector('.hand');
+// let leftHand = document.querySelector('#left'); 
+// let rightHand = document.querySelector('#right'); 
 
-mouseTrackingSpace.addEventListener('mousemove', function (e){
-  hand.style.top = e.clientY - mouseTrackingSpace.getBoundingClientRect().top + 'px';
-  leftHand.style.transform = `rotate(${(e.clientY - 100 ) *.2}deg)`;
-  rightHand.style.transform = `rotate(${(e.clientY - 400 ) * -.2}deg)`;
-});
+// mouseTrackingSpace.addEventListener('mousemove', function (e){
+//   hand.style.top = e.clientY - mouseTrackingSpace.getBoundingClientRect().top + 'px';
+  // leftHand.style.transform = `rotate(${(e.clientY - 100 ) *.2}deg)`;
+  // rightHand.style.transform = `rotate(${(e.clientY - 400 ) * -.2}deg)`;
+// });
 
 
 
