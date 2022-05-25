@@ -37,7 +37,7 @@ function playRound(playerSelection, computerSelection) {
   } 
   results.textContent = (`- Round ${++currentGameRound} -`);
 
-  console.log(`Round ${++currentGameRound}:`
+  console.log(`Round ${currentGameRound}:`
   + ` user played ${playerSelection}`
   + ` against ${computerSelection}.`);
 
