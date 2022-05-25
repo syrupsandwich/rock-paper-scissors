@@ -61,3 +61,13 @@ body {
   width: 80%;
   height: auto;
 }
+
+.words {
+  position: absolute;
+  width: inherit;
+}
+
+#score {
+  margin-top: -10px;
+  margin-bottom: 80px;
+}
