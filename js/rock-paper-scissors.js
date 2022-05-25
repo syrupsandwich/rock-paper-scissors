@@ -102,3 +102,7 @@ mouseTrackingSpace.addEventListener('mousemove', function (e){
   rightHand.style.transform = `rotate(${(e.clientY - 240 ) * -.2}deg)`;
 });
 
+throwDown.addEventListener('mouseleave', function (){
+  leftHand.src = `./image/rps-rock.svg`;
+  rightHand.src = `./image/rps-robot-rock.svg`;
+});
