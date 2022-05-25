@@ -25,6 +25,11 @@ let results = document.querySelector('#results');
 function playRound(playerSelection, computerSelection) {
   gameEnd.style.color = 'white';
   gameEnd.textContent = '.';
+
+  //update images
+  leftHand.src = `./image/rps-${playerSelection}.svg`;
+  rightHand.src = `./image/rps-robot-${computerSelection}.svg`;
+
   //stop the round if player selections are the same
   if (playerSelection == computerSelection) {
     results.textContent = (`Round ${currentGameRound}: same selection by chance`)
@@ -96,6 +101,4 @@ mouseTrackingSpace.addEventListener('mousemove', function (e){
   leftHand.style.transform = `rotate(${(e.clientY - 240 ) *.2}deg)`;
   rightHand.style.transform = `rotate(${(e.clientY - 240 ) * -.2}deg)`;
 });
-
-
 
