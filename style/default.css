@@ -26,26 +26,38 @@ body {
   text-align: center;
 }
 
-#ring {
+#inner-container {
   background-color: white;
   border-radius: 6px;
   padding: 6px;
   border: 1px solid rgb(179, 179, 179);
   box-shadow: inset 2px 2px darkslategrey;
-  /* display: flex; */
-  /* justify-content: space-between; */
   width: 460px;
+  padding-top: 10px;
 }
 
-#middle-container {
-  min-width: 360px;
-  align-items: center;
-  padding-top: 10px;
-  /* margin: 0 100px; */
+.hover {
+  padding-bottom: 300px;
+  border: 1px dashed grey;
+  position: absolute;
+  width: inherit; 
+  margin: -30px 0;
 }
 
 .shoot {
-  padding-bottom: 200px;
+  display: flex; 
   text-align: center;
-  border: 1px dashed grey;
+  padding-bottom: 80px;
+  margin-bottom: -40px;  
+}
+
+.hand {
+  border: 1px dotted red;
+  min-width: auto;
+  flex-grow: 1;
+}
+
+.hand>img {
+  width: 60%;
+  height: auto;
 }

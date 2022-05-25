@@ -62,7 +62,7 @@ buttons.addEventListener('click', (event) => {
   console.log(selection)
 });
 
-let throwDown = document.querySelector('.shoot');
+let throwDown = document.querySelector('.hover');
 throwDown.addEventListener('mouseover', function(){
   playRound(selection, computerPlay());
   scoreBoard.textContent = `${playerScore} : ${computerScore}`;
