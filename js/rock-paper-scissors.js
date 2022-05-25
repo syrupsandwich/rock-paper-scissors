@@ -61,6 +61,7 @@ function playRound(playerSelection, computerSelection) {
 let selection = 'rock';
 
 let buttons = document.querySelector('#buttons');
+
 buttons.addEventListener('click', (event) => {
   if (event.target.nodeName == 'DIV') return;
   selection = event.target.textContent.toLowerCase();
@@ -72,7 +73,6 @@ throwDown.addEventListener('mouseover', function(){
   playRound(selection, computerPlay());
   scoreBoard.textContent = `${playerScore} : ${computerScore}`;
   checkScore();
-  
 });
 
 function checkScore() {

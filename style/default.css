@@ -38,7 +38,7 @@ body {
 
 .hover {
   padding-bottom: 300px;
-  border: 1px dashed grey;
+  /* border: 1px dashed grey; */
   position: absolute;
   width: inherit; 
   margin: -30px 0;
@@ -52,12 +52,12 @@ body {
 }
 
 .hand {
-  border: 1px dotted red;
+  /* border: 1px dotted red; */
   min-width: auto;
   flex-grow: 1;
 }
 
 .hand>img {
-  width: 60%;
+  width: 80%;
   height: auto;
 }
