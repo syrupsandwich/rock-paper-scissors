@@ -32,11 +32,12 @@ function playRound(playerSelection, computerSelection) {
 
   //stop the round if player selections are the same
   if (playerSelection == computerSelection) {
-    results.textContent = (`Round ${currentGameRound}: same selection by chance`)
+    results.textContent = ('retry')
     return;
   } 
+  results.textContent = (`- Round ${++currentGameRound} -`);
 
-  results.textContent = (`Round ${++currentGameRound}:`
+  console.log(`Round ${++currentGameRound}:`
   + ` user played ${playerSelection}`
   + ` against ${computerSelection}.`);
 
