@@ -1,5 +1,6 @@
-// return a random selection of rock, paper, or scissors
-function computerPlay() {
+let computerPlay = randomSelection();
+
+function randomSelection() {
   if (getRandomInt(3) == 0) {
     return ('rock');
   } else if (getRandomInt(3) == 1) {
@@ -40,7 +41,7 @@ function playRound(playerSelection, computerSelection) {
   // console.log(`Round ${currentGameRound}:`
   // + ` user played ${playerSelection}`
   // + ` against ${computerSelection}.`);
-
+  
   if (playerSelection == 'rock' & computerSelection == 'paper') {
     ++computerScore;
   } else if (playerSelection == 'rock' & computerSelection == 'scissors') {
@@ -69,9 +70,9 @@ buttons.addEventListener('click', (event) => {
   console.log(selection)
 });
 
-let throwDown = document.querySelector('.hover');
+let throwDown = document.querySelector('.execute');
 throwDown.addEventListener('mouseover', function(){
-  playRound(selection, computerPlay());
+  playRound(selection, computerPlay);
   scoreBoard.textContent = `${playerScore} : ${computerScore}`;
   checkScore();
 });
@@ -106,4 +107,5 @@ mouseTrackingSpace.addEventListener('mousemove', function (e){
 throwDown.addEventListener('mouseleave', function (){
   leftHand.src = `./image/rps-rock.svg`;
   rightHand.src = `./image/rps-robot-rock.svg`;
+  computerPlay = randomSelection();
 });
