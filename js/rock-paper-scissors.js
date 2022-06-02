@@ -122,3 +122,18 @@ feign.addEventListener('mouseleave', function (){
   leftHand.src = `./image/rps-rock.svg`;
   rightHand.src = `./image/rps-rock.svg`;
 });
+
+let xRayBtn = document.querySelector('.x-ray');
+xRayBtn.addEventListener('dblclick', function(){
+  document.querySelector('.execute').style.border = '1px dashed grey';
+  document.querySelector('.shoot').children[0].style.border = '1px dashed grey';
+  document.querySelector('.shoot').children[1].style.border = '1px dashed grey';
+  document.querySelector('.feign').style.border = '1px dashed grey';
+});
+
+xRayBtn.addEventListener('click', function(){
+  document.querySelector('.execute').style.border = 'none';
+  document.querySelector('.hand').style.border = 'none';
+  document.querySelector('.shoot').children[1].style.border = 'none';
+  document.querySelector('.feign').style.border = 'none';
+});
