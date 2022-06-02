@@ -22,25 +22,18 @@ let scoreBoard = document.querySelector('#score');
 let title = document.querySelector('#title');
 let results = document.querySelector('#results');
 
-// compare the player's selection against a random selection
 function playRound(playerSelection, computerSelection) {
   gameEnd.style.color = 'white';
   gameEnd.textContent = '.';
 
-  //update images
   leftHand.src = `./image/rps-${playerSelection}.svg`;
-  rightHand.src = `./image/rps-robot-${computerSelection}.svg`;
+  rightHand.src = `./image/rps-${computerSelection}.svg`;
 
-  //stop the round if player selections are the same
   if (playerSelection == computerSelection) {
     results.textContent = ('retry')
     return;
   } 
   results.textContent = (`- Round ${++currentGameRound} -`);
-
-  // console.log(`Round ${currentGameRound}:`
-  // + ` user played ${playerSelection}`
-  // + ` against ${computerSelection}.`);
   
   if (playerSelection == 'rock' & computerSelection == 'paper') {
     ++computerScore;
@@ -94,18 +87,38 @@ function announceWinner(){
 }
 
 let mouseTrackingSpace = document.querySelector('#inner-container');
-// let hand = document.querySelector('.hand');
 let leftHand = document.querySelector('#left'); 
 let rightHand = document.querySelector('#right');
 
 mouseTrackingSpace.addEventListener('mousemove', function (e){
-  // hand.style.top = e.clientY - mouseTrackingSpace.getBoundingClientRect().top + 'px';
-  leftHand.style.transform = `rotate(${(e.clientY - 240 ) *.2}deg)`;
-  rightHand.style.transform = `rotate(${(e.clientY - 240 ) * -.2}deg)`;
+  leftHand.style.transform = `rotate(${(e.clientY - 240 ) * .2}deg)`;
+  rightHand.style.transform = `rotate(${(e.clientY - 240 ) * .2}deg)`;
+  rightHand.parentElement.style.transform = 'scaleX(-1)'
 });
 
 throwDown.addEventListener('mouseleave', function (){
   leftHand.src = `./image/rps-rock.svg`;
-  rightHand.src = `./image/rps-robot-rock.svg`;
+  rightHand.src = `./image/rps-rock.svg`;
   computerPlay = randomSelection();
+});
+
+let feign = document.querySelector('.feign');
+feign.addEventListener('mousemove', function(){
+  if (computerPlay == 'paper') {
+    rightHand.src = './image/rps-feign-paper.svg'
+  } else if (computerPlay == 'scissors') {
+    rightHand.src = './image/rps-feign-scissors.svg'
+  }
+  
+  if (selection == 'paper') {
+    leftHand.src = './image/rps-feign-paper.svg';
+  } else if (selection == 'scissors') {
+    leftHand.src = './image/rps-feign-scissors.svg';
+  }
+
+});
+
+feign.addEventListener('mouseleave', function (){
+  leftHand.src = `./image/rps-rock.svg`;
+  rightHand.src = `./image/rps-rock.svg`;
 });

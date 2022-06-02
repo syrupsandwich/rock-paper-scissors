@@ -38,7 +38,7 @@ body {
 
 .execute {
   padding-bottom: 300px;
-  border: 1px dashed grey;
+  /* border: 1px dashed grey; */
   position: absolute;
   width: inherit; 
   margin: -28px 0;
@@ -50,11 +50,11 @@ body {
   padding-bottom: 80px;
   margin-bottom: -30px;  
 }
-/* 
+
 .hand {
-  border: 1px dotted red;
+  /* border: 1px dotted red; */
 }
- */
+
 .hand>img {
   width: 80%;
   height: auto;
@@ -77,7 +77,13 @@ text-decoration: underline;
 .feign {
   width: inherit;
   position: absolute;
-  border: 1px dashed blue;
+  /* border: 1px dashed blue; */
   height: 30px;
   margin-top: -60px;
 }
+
+#right {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
