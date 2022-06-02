@@ -135,6 +135,6 @@ xRayBtn.addEventListener('dblclick', function(){
 
 xRayBtn.addEventListener('click', function(){
   document.querySelector('.execute').style.border = 'none';
-  document.querySelector('.shot').style.borderTop = 'none';
+  document.querySelector('.shoot').style.borderTop = 'none';
   document.querySelector('.feign').style.border = 'none';
 });
