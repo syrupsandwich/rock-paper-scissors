@@ -60,6 +60,10 @@ let buttons = document.querySelector('#buttons');
 buttons.addEventListener('click', (event) => {
   if (event.target.nodeName == 'DIV') return;
   selection = event.target.textContent.toLowerCase();
+  event.target.parentElement.children[0].style.color = 'inherit';
+  event.target.parentElement.children[1].style.color = 'inherit';
+  event.target.parentElement.children[2].style.color = 'inherit';
+  event.target.style.color = 'grey';
 });
 
 let throwDown = document.querySelector('.execute');
