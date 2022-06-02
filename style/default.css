@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 }
   
 .btn {
@@ -34,25 +33,18 @@ body {
   box-shadow: inset 2px 2px darkslategrey;
   width: 460px;
   padding-top: 10px;
+  height: 266px;
 }
 
 .execute {
   padding-bottom: 300px;
-  /* border: 1px dashed grey; */
   position: absolute;
   width: inherit; 
-  margin: -28px 0;
 }
 
 .shoot {
   display: flex; 
   text-align: center;
-  padding-bottom: 80px;
-  margin-bottom: -30px;  
-}
-
-.hand {
-  /* border: 1px dotted red; */
 }
 
 .hand>img {
@@ -77,9 +69,8 @@ text-decoration: underline;
 .feign {
   width: inherit;
   position: absolute;
-  /* border: 1px dashed blue; */
   height: 60px;
-  margin-top: -90px;
+  margin-top: -62px;
 }
 
 #right {

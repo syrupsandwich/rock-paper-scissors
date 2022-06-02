@@ -60,7 +60,6 @@ let buttons = document.querySelector('#buttons');
 buttons.addEventListener('click', (event) => {
   if (event.target.nodeName == 'DIV') return;
   selection = event.target.textContent.toLowerCase();
-  console.log(selection)
 });
 
 let throwDown = document.querySelector('.execute');
@@ -126,14 +125,12 @@ feign.addEventListener('mouseleave', function (){
 let xRayBtn = document.querySelector('.x-ray');
 xRayBtn.addEventListener('dblclick', function(){
   document.querySelector('.execute').style.border = '1px dashed grey';
-  document.querySelector('.shoot').children[0].style.border = '1px dashed grey';
-  document.querySelector('.shoot').children[1].style.border = '1px dashed grey';
+  document.querySelector('.shoot').style.borderTop = '1px dashed grey';
   document.querySelector('.feign').style.border = '1px dashed grey';
 });
 
 xRayBtn.addEventListener('click', function(){
   document.querySelector('.execute').style.border = 'none';
-  document.querySelector('.hand').style.border = 'none';
-  document.querySelector('.shoot').children[1].style.border = 'none';
+  document.querySelector('.shot').style.borderTop = 'none';
   document.querySelector('.feign').style.border = 'none';
 });
